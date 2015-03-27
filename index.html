@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>A presentation of Flexbox CSS</title>
+
+    <meta name="description" content="A presentation of angular.js">
+    <meta name="author" content="Freddy Harris">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <style>
+      @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext);
+      body {
+        background: #F4F4F4;
+        background-color: #F4F4F4;
+      }
+      .reveal ul {
+        list-style: circle;
+      }
+      .reveal a:not(.image) {
+        color: #EA5C45;
+      }
+      .reveal a:not(.image):hover {
+        color: #EA5C45;
+        opacity: 0.7;
+      }
+      .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+        color: #39414C;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        letter-spacing: 0em;
+      }
+      .reveal {
+        color: #858585;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+      }
+      .reveal p {
+        font-weight: 300;
+      }
+      .reveal .progress span{
+        background: #EA5C45;
+      }
+      .reveal blockquote {
+        background-clip: padding-box;
+        box-shadow: inset 0 -4px 0 #EA5C45;
+        background-color: #39414C;
+        border-radius: 5px;
+        color: #FFFFFF;
+        font-weight: 300;
+        letter-spacing: 0.025em;
+        padding: 8px 8px 10px;
+        font-size: 30px;
+      }
+      .reveal .controls div.navigate-left,
+      .reveal .controls div.navigate-left.enabled {
+        border-right-color: #EA5C45 !important;
+      }
+      .reveal .controls div.navigate-right,
+      .reveal .controls div.navigate-right.enabled {
+        border-left-color: #EA5C45 !important;
+      }
+      .reveal .controls div.navigate-left:hover,
+      .reveal .controls div.navigate-left.enabled:hover,
+      .reveal .controls div.navigate-right:hover,
+      .reveal .controls div.navigate-right.enabled:hover {
+        opacity: 0.4;
+      }
+
+      .container {
+        display: flex;
+        padding: 10px !important;
+        width: 90%;
+        margin: 15px auto !important;
+        background-color: #607D8B;
+        color: white;
+        box-sizing: border-box;
+        font-size: 26px !important;
+      }
+      .container .item {
+        padding: 10px !important;
+      }
+      .container .item:nth-child(1) {
+        background-color: #F44336;
+      }
+      .container .item:nth-child(1)::before {
+        content: "1. Red";
+      }
+      .container .item:nth-child(2) {
+        background-color: #3F51B5;
+      }
+      .container .item:nth-child(2)::before {
+        content: "2. Indigo";
+      }
+      .container .item:nth-child(3) {
+        background-color: #E91E63;
+      }
+      .container .item:nth-child(3)::before {
+        content: "3. Pink";
+      }
+      .container .item:nth-child(4) {
+        background-color: #2196F3;
+      }
+      .container .item:nth-child(4)::before {
+        content: "4. Blue";
+      }
+      .container .item:nth-child(5) {
+        background-color: #9C27B0;
+      }
+      .container .item:nth-child(5)::before {
+        content: "5. Purple";
+      }
+      .container .item:nth-child(6) {
+        background-color: #4CAF50;
+      }
+      .container .item:nth-child(6)::before {
+        content: "6. Green";
+      }
+    </style>
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <style type="text/css">
+      .reveal ul {
+        margin-bottom: 16px;
+      }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>flexbox</h1>
+          <h4>CSS Flexible Box Layout</h4>
+          <hr>
+          <h3>it's time to use it!</h3>
+          <p>
+            <a href="http://freddy03h.github.io" target="_blank">Freddy Harris</a> / <a href="http://twitter.com/harrisfreddy" target="_blank">@harrisfreddy</a>
+          </p>
+          <p>
+            <small><a href="http://followanalytics.com" target="_blank">FollowAnalytics</a> / <a href="http://twitter.com/followanalytics" target="_blank">@followanalytics</a></small>
+          </p>
+        </section>
+
+        <!-- |||| -->
+
+        <section>
+          <h1>Browsers</h1>
+        </section>
+
+        <!-- |||| -->
+
+        <section>
+          <h1>CSS</h1>
+        </section>
+
+        <section>
+          <h2>display: flex</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+    /* flex-direction: row; */
+}
+          </code></pre>
+
+          <div class="container">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
+          <aside class="notes">
+
+          </aside>
+        </section>
+
+        <section>
+          <h2>flex-direction</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+    flex-direction: column;
+}
+          </code></pre>
+
+          <div class="container" style="flex-direction: column">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
+        </section>
+
+        <section>
+          <h2>flex-direction</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+          </code></pre>
+
+          <div class="container" style="flex-direction: row-reverse">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
+        </section>
+
+        <section>
+          <h2>order</h2>
+
+          <p>À appliquer sur les flex-item, par defaut la valeur est à 0.</p>
+
+          <pre><code data-trim contenteditable class="css">
+.item:nth-child(5) {
+    order: -1;
+}
+.item:nth-child(2) {
+    order: 1;
+}
+          </code></pre>
+
+          <div class="container">
+            <div class="item"></div>
+            <div class="item" style="order:1"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item" style="order:-1"></div>
+            <div class="item"></div>
+          </div>
+        </section>
+
+        <section>
+          <h2>order</h2>
+
+          <p>L'ordre dans le DOM défini l'ordre pour les flex-items de même order</p>
+
+          <pre><code data-trim contenteditable class="css">
+.item:nth-child(4) {
+    order: 1;
+}
+.item:nth-child(2) {
+    order: 1;
+}
+          </code></pre>
+
+          <div class="container">
+            <div class="item"></div>
+            <div class="item" style="order:1"></div>
+            <div class="item"></div>
+            <div class="item" style="order:1"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
+        </section>
+
+        <section>
+          <h2>justify-content</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+    justify-content: center;
+}
+          </code></pre>
+
+          <div class="container" style="justify-content: center">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>justify-content</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+          </code></pre>
+
+          <div class="container" style="justify-content: space-between">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>justify-content</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+          </code></pre>
+
+          <div class="container" style="justify-content: space-around">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>align-items</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+    /* align-items: stretch; */
+}
+          </code></pre>
+
+          <div class="container" style="height: 200px;">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>align-items</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+    align-items: center;
+}
+          </code></pre>
+
+          <div class="container" style="align-items: center; height: 200px;">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>align-self</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+    align-items: flex-end;
+}
+.item:nth-child(3) {
+    align-self: stretch;
+}
+          </code></pre>
+
+          <div class="container" style="align-items: flex-end; height: 200px;">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item" style="align-self: stretch"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>margin</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+}
+.item:nth-child(3) {
+    margin-left: auto;
+}
+          </code></pre>
+
+          <div class="container" style="height: 200px;">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item" style="margin-left: auto"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>margin</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+}
+.item:nth-child(1) {
+    margin-right: auto;
+}
+.item:nth-child(3) {
+    margin-left: auto;
+}
+          </code></pre>
+
+          <div class="container" style="height: 200px;">
+            <div class="item" style="margin-right: auto"></div>
+            <div class="item"></div>
+            <div class="item" style="margin-left: auto"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>margin</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+}
+.item {
+    margin: auto;
+}
+          </code></pre>
+
+          <div class="container" style="height: 200px;">
+            <div class="item" style="margin: auto"></div>
+          </div>
+
+        </section>
+
+        <!-- |||| -->
+
+        <section>
+          <h1>use cases</h1>
+        </section>
+
+        <!-- |||| -->
+
+        <section>
+          <h1>Tools</h1>
+        </section>
+
+        <!-- |||| -->
+
+        <section>
+          <h2>References</h2>
+          <ul>
+            <li><a href="http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html" target="_blank">Alsacréations - CSS3 Flexbox Layout module</a></li>
+          </ul>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: 'solarized', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
