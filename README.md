@@ -1,7 +1,6 @@
-# A presentation of angular.js
+# A presentation of CSS Flexbox
 
-Best practices.
-Common use cases and misunderstood.
+Presentation of properties, browsers compatibilities and use cases
 
 
 ## Installation
