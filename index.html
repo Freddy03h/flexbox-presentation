@@ -89,43 +89,69 @@
       }
       .container .item {
         padding: 10px !important;
+        box-sizing: border-box;
       }
       .container .item:nth-child(1) {
         background-color: #F44336;
       }
       .container .item:nth-child(1)::before {
-        content: "1. Red";
+        content: "1.\a0 Red";
       }
       .container .item:nth-child(2) {
-        background-color: #3F51B5;
+        background-color: #4CAF50;
       }
       .container .item:nth-child(2)::before {
-        content: "2. Indigo";
+        content: "2.\a0 Green";
       }
       .container .item:nth-child(3) {
         background-color: #E91E63;
       }
       .container .item:nth-child(3)::before {
-        content: "3. Pink";
+        content: "3.\a0 Pink";
       }
       .container .item:nth-child(4) {
         background-color: #2196F3;
       }
       .container .item:nth-child(4)::before {
-        content: "4. Blue";
+        content: "4.\a0 Blue";
       }
       .container .item:nth-child(5) {
-        background-color: #9C27B0;
+        background-color: #FFEB3B;
+        color: rgba(0,0,0,0.87);
       }
       .container .item:nth-child(5)::before {
-        content: "5. Purple";
+        content: "5.\a0 Yellow";
       }
       .container .item:nth-child(6) {
-        background-color: #4CAF50;
+        background-color: #9C27B0;
       }
       .container .item:nth-child(6)::before {
-        content: "6. Green";
+        content: "6.\a0 Purple";
       }
+      .container .item:nth-child(7) {
+        background-color: #8BC34A;
+      }
+      .container .item:nth-child(7)::before {
+        content: "7.\a0 Light\a0 Green";
+      }
+      .container .item:nth-child(8) {
+        background-color: #3F51B5;
+      }
+      .container .item:nth-child(8)::before {
+        content: "8.\a0 Indigo";
+      }
+
+      h3.example {
+          display: flex;
+          align-items: center;
+      }
+      h3.example::before,
+      h3.example::after {
+          content: "";
+          border-bottom: solid #39414C 1px;
+          flex: 1;
+      }
+      
     </style>
 
     <!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -174,6 +200,12 @@
           <h1>Browsers</h1>
         </section>
 
+        <section>
+          <h2>break up with ie8</h2>
+
+          <p>http://breakupwithie8.com</p>
+        </section>
+
         <!-- |||| -->
 
         <section>
@@ -183,6 +215,16 @@
         <section>
           <h2>display: flex</h2>
 
+          <pre><code data-trim contenteditable class="html">
+<div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div>
+          </code></pre>
+
           <pre><code data-trim contenteditable class="css">
 .container {
     display: flex;
@@ -191,7 +233,6 @@
           </code></pre>
 
           <div class="container">
-            <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
@@ -219,7 +260,6 @@
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
-            <div class="item"></div>
           </div>
         </section>
 
@@ -234,7 +274,6 @@
           </code></pre>
 
           <div class="container" style="flex-direction: row-reverse">
-            <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
@@ -263,7 +302,6 @@
             <div class="item"></div>
             <div class="item"></div>
             <div class="item" style="order:-1"></div>
-            <div class="item"></div>
           </div>
         </section>
 
@@ -287,12 +325,12 @@
             <div class="item"></div>
             <div class="item" style="order:1"></div>
             <div class="item"></div>
-            <div class="item"></div>
           </div>
         </section>
 
         <section>
           <h2>justify-content</h2>
+          <h4>center</h4>
 
           <pre><code data-trim contenteditable class="css">
 .container {
@@ -307,13 +345,13 @@
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
-            <div class="item"></div>
           </div>
 
         </section>
 
         <section>
           <h2>justify-content</h2>
+          <h4>space-between</h4>
 
           <pre><code data-trim contenteditable class="css">
 .container {
@@ -328,13 +366,13 @@
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
-            <div class="item"></div>
           </div>
 
         </section>
 
         <section>
           <h2>justify-content</h2>
+          <h4>space-around</h4>
 
           <pre><code data-trim contenteditable class="css">
 .container {
@@ -349,17 +387,18 @@
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
-            <div class="item"></div>
           </div>
 
         </section>
 
         <section>
           <h2>align-items</h2>
+          <h4>stretch</h4>
 
           <pre><code data-trim contenteditable class="css">
 .container {
     display: flex;
+    height: 200px;
     /* align-items: stretch; */
 }
           </code></pre>
@@ -370,23 +409,23 @@
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
-            <div class="item"></div>
           </div>
 
         </section>
 
         <section>
           <h2>align-items</h2>
+          <h4>center</h4>
 
           <pre><code data-trim contenteditable class="css">
 .container {
     display: flex;
+    height: 200px;
     align-items: center;
 }
           </code></pre>
 
           <div class="container" style="align-items: center; height: 200px;">
-            <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
@@ -402,6 +441,7 @@
           <pre><code data-trim contenteditable class="css">
 .container {
     display: flex;
+    height: 200px;
     align-items: flex-end;
 }
 .item:nth-child(3) {
@@ -415,7 +455,6 @@
             <div class="item" style="align-self: stretch"></div>
             <div class="item"></div>
             <div class="item"></div>
-            <div class="item"></div>
           </div>
 
         </section>
@@ -426,6 +465,7 @@
           <pre><code data-trim contenteditable class="css">
 .container {
     display: flex;
+    height: 200px;
 }
 .item:nth-child(3) {
     margin-left: auto;
@@ -438,7 +478,6 @@
             <div class="item" style="margin-left: auto"></div>
             <div class="item"></div>
             <div class="item"></div>
-            <div class="item"></div>
           </div>
 
         </section>
@@ -449,6 +488,7 @@
           <pre><code data-trim contenteditable class="css">
 .container {
     display: flex;
+    height: 200px;
 }
 .item:nth-child(1) {
     margin-right: auto;
@@ -464,7 +504,6 @@
             <div class="item" style="margin-left: auto"></div>
             <div class="item"></div>
             <div class="item"></div>
-            <div class="item"></div>
           </div>
 
         </section>
@@ -475,6 +514,7 @@
           <pre><code data-trim contenteditable class="css">
 .container {
     display: flex;
+    height: 200px;
 }
 .item {
     margin: auto;
@@ -487,10 +527,344 @@
 
         </section>
 
+        <section>
+          <h2>flex-grow</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+}
+.item:nth-child(4) {
+    flex-grow: 1;
+}
+          </code></pre>
+
+          <div class="container">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item" style="flex-grow:1"></div>
+            <div class="item"></div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>flex-grow</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+}
+.item:nth-child(4) {
+    flex-grow: 1;
+}
+.item:nth-child(5) {
+    flex-grow: 2;
+}
+          </code></pre>
+
+          <div class="container">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item" style="flex-grow:1"></div>
+            <div class="item" style="flex-grow:2"></div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>flex-shrink</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+}
+.item {
+    /* flex-shrink: 1; */
+}
+          </code></pre>
+
+          <div class="container">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>flex-shrink</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+}
+.item {
+    flex-shrink: 0;
+}
+
+          </code></pre>
+
+          <div class="container">
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:0"></div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>flex-shrink</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+}
+.item {
+    flex-shrink: 0;
+}
+.item:nth-child(7) {
+    flex-shrink: 1;
+}
+
+          </code></pre>
+
+          <div class="container">
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:1"></div>
+            <div class="item" style="flex-shrink:0"></div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>flex-shrink</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+}
+.item {
+    flex-shrink: 0;
+}
+.item:nth-child(7) {
+    flex-shrink: 1;
+}
+.item:nth-child(8) {
+    flex-shrink: 2;
+}
+
+          </code></pre>
+
+          <div class="container">
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="flex-shrink:1"></div>
+            <div class="item" style="flex-shrink:2"></div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>flex-basis</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+}
+.item {
+    flex-basis: 150px;
+}
+          </code></pre>
+
+          <div class="container">
+            <div class="item" style="flex-basis:150px"></div>
+            <div class="item" style="flex-basis:150px"></div>
+            <div class="item" style="flex-basis:150px"></div>
+            <div class="item" style="flex-basis:150px"></div>
+            <div class="item" style="flex-basis:150px"></div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>flex-basis & flex-grow</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+}
+.item {
+    flex-basis: 150px;
+}
+.item:nth-child(1) {
+    flex-grow: 1;
+}
+          </code></pre>
+
+          <div class="container">
+            <div class="item" style="flex-basis:150px; flex-grow:1"></div>
+            <div class="item" style="flex-basis:150px"></div>
+            <div class="item" style="flex-basis:150px"></div>
+            <div class="item" style="flex-basis:150px"></div>
+            <div class="item" style="flex-basis:150px"></div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>flex-basis & flex-shrink</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+}
+.item {
+    flex-basis: 150px;
+    flex-shrink: 0;
+}
+.item:nth-child(5) {
+    flex-shrink: 1;
+}
+          </code></pre>
+
+          <div class="container">
+            <div class="item" style="flex-basis:150px; flex-shrink:0"></div>
+            <div class="item" style="flex-basis:150px; flex-shrink:0"></div>
+            <div class="item" style="flex-basis:150px; flex-shrink:0"></div>
+            <div class="item" style="flex-basis:150px; flex-shrink:0"></div>
+            <div class="item" style="flex-basis:150px; flex-shrink:1"></div>
+            <div class="item" style="flex-basis:150px; flex-shrink:0"></div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>flex</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.item {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+
+/* équivault à */
+
+.item {
+    flex: 1 1 auto;
+}
+          </code></pre>
+
+        </section>
+
+        <section>
+          <h2>min-width & max-width</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+}
+.item {
+    flex: 1 0 150px;
+}
+.item:nth-child(2) {
+    min-width: 250px;
+}
+.item:nth-child(4) {
+    max-width: 50px;
+}
+          </code></pre>
+
+          <div class="container">
+            <div class="item" style="flex:1 0 150px"></div>
+            <div class="item" style="flex:1 0 150px; min-width: 250px"></div>
+            <div class="item" style="flex:1 0 150px"></div>
+            <div class="item" style="flex:1 0 150px; max-width: 50px"></div>
+            <div class="item" style="flex:1 0 150px"></div>
+          </div>
+          
+        </section>
+
+        <section>
+          <h2>flex-wrap</h2>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.item {
+    flex: 1 0 150px;
+}
+          </code></pre>
+
+          <div class="container" style="flex-wrap:wrap">
+            <div class="item" style="flex:1 0 150px"></div>
+            <div class="item" style="flex:1 0 150px"></div>
+            <div class="item" style="flex:1 0 150px"></div>
+            <div class="item" style="flex:1 0 150px"></div>
+            <div class="item" style="flex:1 0 150px"></div>
+            <div class="item" style="flex:1 0 150px"></div>
+            <div class="item" style="flex:1 0 150px"></div>
+            <div class="item" style="flex:1 0 150px"></div>
+          </div>
+          
+        </section>
+
         <!-- |||| -->
 
         <section>
           <h1>use cases</h1>
+        </section>
+
+        <section>
+
+          <pre><code data-trim contenteditable class="css">
+h3 {
+    display: flex;
+    align-items: center;
+}
+h3::before,
+h3::after {
+    content: "";
+    border-bottom: solid black 1px;
+    flex: 1;
+}
+          </code></pre>
+          <pre><code data-trim contenteditable class="html">
+<h3>Lorem ipsum</h3>
+<h3>Dolore</h3>
+          </code></pre>
+
+          <div style="background-color: white; padding: 20px 10px 10px">
+
+            <h3 class="example">Lorem ipsum</h3>
+
+            <h3 class="example">Dolore</h3>
+
+          </div>
         </section>
 
         <!-- |||| -->
@@ -505,6 +879,8 @@
           <h2>References</h2>
           <ul>
             <li><a href="http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html" target="_blank">Alsacréations - CSS3 Flexbox Layout module</a></li>
+            <li><a href="http://philipwalton.github.io/solved-by-flexbox/">Solved by flexbox</a></li>
+            <li><a href="http://jackintheflexbox.tumblr.com/" target="_blank">Jack in the flexbox</a></li>
           </ul>
         </section>
 
