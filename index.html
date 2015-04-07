@@ -76,6 +76,9 @@
       .reveal .controls div.navigate-right.enabled:hover {
         opacity: 0.4;
       }
+      .reveal table {
+        margin: auto;
+      }
 
       .container {
         display: flex;
@@ -151,7 +154,6 @@
           border-bottom: solid #39414C 1px;
           flex: 1;
       }
-      
     </style>
 
     <!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -197,14 +199,194 @@
         <!-- |||| -->
 
         <section>
+          <h1>about me</h1>
+        </section>
+
+        <!-- |||| -->
+
+        <section>
           <h1>Browsers</h1>
         </section>
 
         <section>
-          <h2>break up with ie8</h2>
+          <img src="/img/caniuse-flexbox.png">
+        </section>
 
+        <section>
+          <h2>caniuse.com</h2>
+          <img src="/img/caniuse-flexbox-relative.png">
+        </section>
+
+        <section>
+          <h2>caniuse.com</h2>
+          <img src="/img/caniuse-flexbox-usage.png">
+        </section>
+
+        <section>
+          <h3 style="text-align: left">Ni Facebook,<br/>ni Twitter,<br/>ni Microsoft,<br/>ni Yahoo,<br/>ni Google,<br/>ni Apple<br/>ne supportent IE8.</h3>
+          <h3 style="text-align: left">Votre site a-t-il besoin d’être optimisé pour IE8 ?</h3>
+        </section>
+
+        <section>
+          <h2>break up with ie8</h2>
+          <img src="/img/break-up-with-ie8.png">
           <p>http://breakupwithie8.com</p>
         </section>
+
+        <section>
+          <img src="/img/StatCounter-browser_version_partially_combined-FR-monthly-201503-201503-bar.png">
+          <p>Stats France Mars 2015</p>
+        </section>
+
+        <section>
+          <h2>Websites français grand public</h2>
+          <table>
+            <thead><tr>
+              <th></th><th>PlayTV</th><th>BetaSeries</th>
+            </tr></thead>
+            <tbody>
+              <tr>
+                <td>IE 8</td><td>0.8%</td><td>%</td>
+              </tr>
+              <tr>
+                <td>IE 9</td><td>1%</td><td>%</td>
+              </tr>
+            </tbody>
+          </table>
+          <aside class="notes">
+          <p>PlayTV : plus de 6 millions de visites mensuelles - 8e sites le plus visités au Classement CybereStat des sites souscripteurs de l’étude Médiamétrie-eStat en décembre 2012</p>
+          </aside>
+        </section>
+
+        <!-- |||| -->
+
+        <section>
+          <h1>Tools</h1>
+        </section>
+
+        <section>
+          <h2>syntaxe 2009</h2>
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: -webkit-box; /* Safari 3 to 7, Chrome 4 to 20, Android Browser */
+    display: -moz-box /* Firefox 2 to 21  */;
+
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+
+    -webkit-box-align: start;
+    -moz-box-align: start;
+}
+.item {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>syntaxes 2011</h2>
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: -ms-flexbox; /* IE 10 */
+
+    -ms-flex-flow: row;
+
+    -ms-flex-align: start;
+}
+.item {
+    -ms-flex: 1;
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>syntaxes 2012</h2>
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: flex; /* since Chrome 29, Firefox 22 and IE11 */
+    display: -webkit-flex; /* since Safari 7 and Chrome Android 4.4 */
+
+    flex-direction: row;
+    -webkit-flex-direction: row;
+
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+}
+.item {
+    flex: 1;
+    -webkit-flex: 1;
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>ô_Ø</h2>
+          <pre><code data-trim contenteditable class="css">
+.container {
+    display: -webkit-box; /* Safari 3 to 7, Chrome 4 to 20, Android Browser */
+    display: -moz-box /* Firefox 2 to 21  */;
+    display: -ms-flexbox; /* IE 10 */
+    display: -webkit-flex; /* since Safari 7 and Chrome Android 4.4 */
+    display: flex; /* since Chrome 29, Firefox 22 and IE11 */
+
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -ms-flex-flow: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+.item {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Autoprefixer</h2>
+          <h4>Postprocessor basé sur PostCSS</h4>
+
+          <p>Il suffit de lui indiquer les navigateurs à supporter<br/><code>browsers: ['> 1%', '', 'IE 10']</code><br/><code>browsers: ['last 2 versions', 'Firefox >=10']</code></p>
+
+          <p>Meilleur support des syntaxes Flexbox que Compass</p>
+
+          <p>Il existe déjà beaucoup de plugins : Grunt, Gulp, Webpack, Less, Stylus, Rails …</p>
+        </section>
+
+        <section>
+          <h3>Je dois vraiment<br/>supporter IE…</h3>
+        </section>
+
+        <section>
+          <h2>Modernizr</h2>
+          <h4>Feature detection</h4>
+
+          <p>Ajoute des classes sur l'élément <code>html</code></p>
+
+          <pre><code data-trim contenteditable class="css">
+.no-flexbox.no-flexboxlegacy {
+
+  /* fallback */
+
+}
+          </code></pre>
+        </section>
+
 
         <!-- |||| -->
 
@@ -780,6 +962,10 @@
         </section>
 
         <section>
+          <img src="/img/standardista_2015-mars-23.png">
+        </section>
+
+        <section>
           <h2>min-width & max-width</h2>
 
           <pre><code data-trim contenteditable class="css">
@@ -804,7 +990,7 @@
             <div class="item" style="flex:1 0 150px; max-width: 50px"></div>
             <div class="item" style="flex:1 0 150px"></div>
           </div>
-          
+
         </section>
 
         <section>
@@ -830,7 +1016,7 @@
             <div class="item" style="flex:1 0 150px"></div>
             <div class="item" style="flex:1 0 150px"></div>
           </div>
-          
+
         </section>
 
         <!-- |||| -->
@@ -870,17 +1056,14 @@ h3::after {
         <!-- |||| -->
 
         <section>
-          <h1>Tools</h1>
-        </section>
-
-        <!-- |||| -->
-
-        <section>
           <h2>References</h2>
           <ul>
-            <li><a href="http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html" target="_blank">Alsacréations - CSS3 Flexbox Layout module</a></li>
+            <li><a href="http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html" target="_blank">CSS3 Flexbox Layout module</a></li>
             <li><a href="http://philipwalton.github.io/solved-by-flexbox/">Solved by flexbox</a></li>
             <li><a href="http://jackintheflexbox.tumblr.com/" target="_blank">Jack in the flexbox</a></li>
+            <li><a href="http://chriswrightdesign.com/experiments/using-flexbox-today/">Using flexbox today</a></li>
+            <li><a href="https://github.com/postcss/autoprefixer">Autoprefixer</a></li>
+            <li><a href="http://modernizr.com/">Modernizr</a></li>
           </ul>
         </section>
 
