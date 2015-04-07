@@ -154,6 +154,77 @@
           border-bottom: solid #39414C 1px;
           flex: 1;
       }
+
+      @-webkit-keyframes grow {
+          0% {
+              width: 300px;
+          }
+          100% {
+              width: 800px;
+          }
+      }
+      @keyframes grow {
+          0% {
+              width: 300px;
+          }
+          100% {
+              width: 800px;
+          }
+      }
+
+      .reveal .media-example.media-example-animate {
+        -webkit-animation-duration: 4000ms;
+        animation-duration: 4000ms;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+
+        -webkit-animation-name: grow;
+        animation-name: grow;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+      }
+
+      .reveal .media-example {
+        font-size: 20px;
+        line-height: normal;
+        border: solid black 1px;
+        padding: 10px;
+        text-align: left;
+
+        display: flex;
+      }
+      .reveal .media-example-body {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+      }
+      .reveal .media-example-image {
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-color: #EA5C45;
+        border-radius: 20px;
+        margin-right:10px;
+
+        flex-shrink: 0;
+      }
+      .reveal .media-example-name {
+        font-weight: bold;
+        margin: 8px 5px 8px 0;
+        flex: 1 0 auto;
+      }
+      .reveal .media-example-date {
+        color: rgba(0,0,0,0.5);
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+      .reveal .media-example-text {
+        font-size: 16px;
+        flex: 1 0 100%;
+      }
+
     </style>
 
     <!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -202,6 +273,23 @@
           <h1>about me</h1>
         </section>
 
+        <section data-background="/img/mydesk.jpg">
+          <h4 style="color: white">Previously</h4>
+          <h2 style="color: white">Mobile web developer</h2>
+        </section>
+
+        <section data-background="/img/fa_artboard.png">
+          <h4 style="color: white">Actually</h4>
+          <h2 style="color: white">Front end developer</h2>
+        </section>
+
+        <section>
+          <h4>Projet personnel</h4>
+          <a href="http://www.mangacollec.com" target="_blank">
+            <img src="/img/mangacollec.png" />
+          </a>
+        </section>
+
         <!-- |||| -->
 
         <section>
@@ -242,14 +330,14 @@
           <h2>Websites français grand public</h2>
           <table>
             <thead><tr>
-              <th></th><th>PlayTV</th><th>BetaSeries</th>
+              <th></th><th>IE 8</th><th>IE 9</th>
             </tr></thead>
             <tbody>
               <tr>
-                <td>IE 8</td><td>0.8%</td><td>%</td>
+                <td>PlayTV</td><td>0.8%</td><td>1%</td>
               </tr>
               <tr>
-                <td>IE 9</td><td>1%</td><td>%</td>
+                <td>BetaSeries</td><td></td><td></td>
               </tr>
             </tbody>
           </table>
@@ -1053,17 +1141,85 @@ h3::after {
           </div>
         </section>
 
+        <section>
+          <pre><code data-trim contenteditable class="html">
+<div class="media">
+  <div class="media-image"></div>
+  <div class="media-body">
+    <div class="media-name"></div>
+    <div class="media-date"></div>
+    <div class="media-text"></div>
+  </div>
+</div>
+          </code></pre>
+
+          <div class="media-example" style="margin: auto; width:450px">
+            <div class="media-example-image"></div>
+            <div class="media-example-body">
+              <div class="media-example-name">Scheduled Campaign</div>
+              <div class="media-example-date">April 6, 2015 to April 15, 2015</div>
+              <div class="media-example-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed diam neque. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc lacinia nisl augue, eget pretium odio posuere et. Maecenas lorem mauris, sollicitudin eget dapibus eu, venenatis et neque.</div>
+            </div>
+          </div>
+
+
+        </section>
+
+        <section>
+          <pre><code data-trim contenteditable class="css">
+.media {
+  display: flex;
+}
+.media-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.media-image {
+  flex-shrink: 0;
+}
+.media-name {
+  flex: 1 0 auto;
+}
+.media-text {
+  flex: 1 0 100%;
+}
+          </code></pre>
+
+          <div class="media-example media-example-animate" style="margin: auto">
+            <div class="media-example-image"></div>
+            <div class="media-example-body">
+              <div class="media-example-name">Scheduled Campaign</div>
+              <div class="media-example-date">April 6, 2015 to April 15, 2015</div>
+              <div class="media-example-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed diam neque. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc lacinia nisl augue, eget pretium odio posuere et. Maecenas lorem mauris, sollicitudin eget dapibus eu, venenatis et neque.</div>
+            </div>
+          </div>
+
+        </section>
+
         <!-- |||| -->
 
         <section>
           <h2>References</h2>
           <ul>
             <li><a href="http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html" target="_blank">CSS3 Flexbox Layout module</a></li>
-            <li><a href="http://philipwalton.github.io/solved-by-flexbox/">Solved by flexbox</a></li>
+            <li><a href="http://philipwalton.github.io/solved-by-flexbox/" target="_blank">Solved by flexbox</a></li>
             <li><a href="http://jackintheflexbox.tumblr.com/" target="_blank">Jack in the flexbox</a></li>
-            <li><a href="http://chriswrightdesign.com/experiments/using-flexbox-today/">Using flexbox today</a></li>
-            <li><a href="https://github.com/postcss/autoprefixer">Autoprefixer</a></li>
-            <li><a href="http://modernizr.com/">Modernizr</a></li>
+            <li><a href="http://chriswrightdesign.com/experiments/using-flexbox-today/" target="_blank">Using flexbox today</a></li>
+            <li><a href="https://github.com/postcss/autoprefixer" target="_blank">Autoprefixer</a></li>
+            <li><a href="http://modernizr.com/" target="_blank">Modernizr</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Merci</h2>
+
+          <h4><a href="https://remixjobs.com/rjday/company/69957/informations" target="_blank">FollowAnalytics recrute !</a></h4>
+          <ul>
+            <li>Dev Backend Ruby</li>
+            <li>Dev iOS</li>
+            <li>Dev Android</li>
+            <li>QA Engineer</li>
           </ul>
         </section>
 
