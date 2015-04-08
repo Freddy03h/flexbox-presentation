@@ -85,6 +85,7 @@
       }
 
       .container {
+        display: -webkit-flex;
         display: flex;
         padding: 10px !important;
         width: 90%;
@@ -97,6 +98,7 @@
       .container .item {
         padding: 10px !important;
         box-sizing: border-box;
+        overflow: hidden;
       }
       .container .item:nth-child(1) {
         background-color: #F44336;
@@ -149,13 +151,16 @@
       }
 
       h3.example {
+          display: -webkit-flex;
           display: flex;
+          -webkit-align-items: center;
           align-items: center;
       }
       h3.example::before,
       h3.example::after {
           content: "";
           border-bottom: solid #39414C 1px;
+          -webkit-flex: 1;
           flex: 1;
       }
 
@@ -196,12 +201,16 @@
         border: solid black 1px;
         padding: 10px;
         text-align: left;
-
+        
+        display: -webkit-flex;
         display: flex;
       }
       .reveal .media-example-body {
+        display: -webkit-flex;
         display: flex;
+        -webkit-flex-wrap: wrap;
         flex-wrap: wrap;
+        -webkit-align-items: baseline;
         align-items: baseline;
       }
       .reveal .media-example-image {
@@ -211,12 +220,14 @@
         background-color: #EA5C45;
         border-radius: 20px;
         margin-right:10px;
-
+        
+        -webkit-flex-shrink: 0;
         flex-shrink: 0;
       }
       .reveal .media-example-name {
         font-weight: bold;
         margin: 8px 5px 8px 0;
+        -webkit-flex: 1 0 auto;
         flex: 1 0 auto;
       }
       .reveal .media-example-date {
@@ -226,6 +237,7 @@
       }
       .reveal .media-example-text {
         font-size: 16px;
+        -webkit-flex: 1 0 100%;
         flex: 1 0 100%;
       }
 
@@ -533,7 +545,7 @@
 }
           </code></pre>
 
-          <div class="container" style="flex-direction: column">
+          <div class="container" style="-webkit-flex-direction: column;flex-direction: column">
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
@@ -552,7 +564,7 @@
 }
           </code></pre>
 
-          <div class="container" style="flex-direction: row-reverse">
+          <div class="container" style="-webkit-flex-direction: row-reverse;flex-direction: row-reverse">
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
@@ -577,10 +589,10 @@
 
           <div class="container">
             <div class="item"></div>
-            <div class="item" style="order:1"></div>
+            <div class="item" style="-webkit-order:1;order:1"></div>
             <div class="item"></div>
             <div class="item"></div>
-            <div class="item" style="order:-1"></div>
+            <div class="item" style="-webkit-order:-1;order:-1"></div>
           </div>
         </section>
 
@@ -600,9 +612,9 @@
 
           <div class="container">
             <div class="item"></div>
-            <div class="item" style="order:1"></div>
+            <div class="item" style="-webkit-order:1;order:1"></div>
             <div class="item"></div>
-            <div class="item" style="order:1"></div>
+            <div class="item" style="-webkit-order:1;order:1"></div>
             <div class="item"></div>
           </div>
         </section>
@@ -618,7 +630,7 @@
 }
           </code></pre>
 
-          <div class="container" style="justify-content: center">
+          <div class="container" style="-webkit-justify-content: center;justify-content: center">
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
@@ -639,7 +651,7 @@
 }
           </code></pre>
 
-          <div class="container" style="justify-content: space-between">
+          <div class="container" style="-webkit-justify-content: space-between;justify-content: space-between">
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
@@ -660,7 +672,7 @@
 }
           </code></pre>
 
-          <div class="container" style="justify-content: space-around">
+          <div class="container" style="-webkit-justify-content: space-around;justify-content: space-around">
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
@@ -704,7 +716,7 @@
 }
           </code></pre>
 
-          <div class="container" style="align-items: center; height: 200px;">
+          <div class="container" style="-webkit-align-items: center;align-items: center; height: 200px;">
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
@@ -728,10 +740,10 @@
 }
           </code></pre>
 
-          <div class="container" style="align-items: flex-end; height: 200px;">
+          <div class="container" style="-webkit-align-items: flex-end;align-items: flex-end; height: 200px;">
             <div class="item"></div>
             <div class="item"></div>
-            <div class="item" style="align-self: stretch"></div>
+            <div class="item" style="-webkit-align-self: stretch;align-self: stretch"></div>
             <div class="item"></div>
             <div class="item"></div>
           </div>
@@ -823,7 +835,7 @@
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
-            <div class="item" style="flex-grow:1"></div>
+            <div class="item" style="-webkit-flex-grow:1;flex-grow:1"></div>
             <div class="item"></div>
           </div>
 
@@ -848,8 +860,8 @@
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
-            <div class="item" style="flex-grow:1"></div>
-            <div class="item" style="flex-grow:2"></div>
+            <div class="item" style="-webkit-flex-grow:1;flex-grow:1"></div>
+            <div class="item" style="-webkit-flex-grow:2;flex-grow:2"></div>
           </div>
 
         </section>
@@ -894,14 +906,14 @@
           </code></pre>
 
           <div class="container">
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0flex-shrink:0"></div>
           </div>
 
         </section>
@@ -923,14 +935,14 @@
           </code></pre>
 
           <div class="container">
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:1"></div>
-            <div class="item" style="flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0;flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0;flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0;flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0;flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0;flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0;flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:1;flex-shrink:1"></div>
+            <div class="item" style="-webkit-flex-shrink:0;flex-shrink:0"></div>
           </div>
 
         </section>
@@ -955,14 +967,14 @@
           </code></pre>
 
           <div class="container">
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:0"></div>
-            <div class="item" style="flex-shrink:1"></div>
-            <div class="item" style="flex-shrink:2"></div>
+            <div class="item" style="-webkit-flex-shrink:0;flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0;flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0;flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0;flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0;flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:0;flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-shrink:1;flex-shrink:1"></div>
+            <div class="item" style="-webkit-flex-shrink:2;flex-shrink:2"></div>
           </div>
 
         </section>
@@ -981,11 +993,11 @@
           </code></pre>
 
           <div class="container">
-            <div class="item" style="flex-basis:150px"></div>
-            <div class="item" style="flex-basis:150px"></div>
-            <div class="item" style="flex-basis:150px"></div>
-            <div class="item" style="flex-basis:150px"></div>
-            <div class="item" style="flex-basis:150px"></div>
+            <div class="item" style="-webkit-flex-basis:150px;flex-basis:150px"></div>
+            <div class="item" style="-webkit-flex-basis:150px;flex-basis:150px"></div>
+            <div class="item" style="-webkit-flex-basis:150px;flex-basis:150px"></div>
+            <div class="item" style="-webkit-flex-basis:150px;flex-basis:150px"></div>
+            <div class="item" style="-webkit-flex-basis:150px;flex-basis:150px"></div>
           </div>
 
         </section>
@@ -1006,11 +1018,11 @@
           </code></pre>
 
           <div class="container">
-            <div class="item" style="flex-basis:150px; flex-grow:1"></div>
-            <div class="item" style="flex-basis:150px"></div>
-            <div class="item" style="flex-basis:150px"></div>
-            <div class="item" style="flex-basis:150px"></div>
-            <div class="item" style="flex-basis:150px"></div>
+            <div class="item" style="-webkit-flex-basis:150px;flex-basis:150px; -webkit-flex-grow:1;flex-grow:1"></div>
+            <div class="item" style="-webkit-flex-basis:150px;flex-basis:150px"></div>
+            <div class="item" style="-webkit-flex-basis:150px;flex-basis:150px"></div>
+            <div class="item" style="-webkit-flex-basis:150px;flex-basis:150px"></div>
+            <div class="item" style="-webkit-flex-basis:150px;flex-basis:150px"></div>
           </div>
 
         </section>
@@ -1032,12 +1044,12 @@
           </code></pre>
 
           <div class="container">
-            <div class="item" style="flex-basis:150px; flex-shrink:0"></div>
-            <div class="item" style="flex-basis:150px; flex-shrink:0"></div>
-            <div class="item" style="flex-basis:150px; flex-shrink:0"></div>
-            <div class="item" style="flex-basis:150px; flex-shrink:0"></div>
-            <div class="item" style="flex-basis:150px; flex-shrink:1"></div>
-            <div class="item" style="flex-basis:150px; flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-basis:150px;flex-basis:150px; -webkit-flex-shrink:0;flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-basis:150px;flex-basis:150px; -webkit-flex-shrink:0;flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-basis:150px;flex-basis:150px; -webkit-flex-shrink:0;flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-basis:150px;flex-basis:150px; -webkit-flex-shrink:0;flex-shrink:0"></div>
+            <div class="item" style="-webkit-flex-basis:150px;flex-basis:150px; -webkit-flex-shrink:1;flex-shrink:1"></div>
+            <div class="item" style="-webkit-flex-basis:150px;flex-basis:150px; -webkit-flex-shrink:0;flex-shrink:0"></div>
           </div>
 
         </section>
@@ -1085,11 +1097,11 @@
           </code></pre>
 
           <div class="container">
-            <div class="item" style="flex:1 0 150px"></div>
-            <div class="item" style="flex:1 0 150px; min-width: 250px"></div>
-            <div class="item" style="flex:1 0 150px"></div>
-            <div class="item" style="flex:1 0 150px; max-width: 50px"></div>
-            <div class="item" style="flex:1 0 150px"></div>
+            <div class="item" style="-webkit-flex:1 0 150px;flex:1 0 150px"></div>
+            <div class="item" style="-webkit-flex:1 0 150px;flex:1 0 150px; min-width: 250px"></div>
+            <div class="item" style="-webkit-flex:1 0 150px;flex:1 0 150px"></div>
+            <div class="item" style="-webkit-flex:1 0 150px;flex:1 0 150px; max-width: 50px"></div>
+            <div class="item" style="-webkit-flex:1 0 150px;flex:1 0 150px"></div>
           </div>
 
         </section>
@@ -1107,15 +1119,15 @@
 }
           </code></pre>
 
-          <div class="container" style="flex-wrap:wrap">
-            <div class="item" style="flex:1 0 150px"></div>
-            <div class="item" style="flex:1 0 150px"></div>
-            <div class="item" style="flex:1 0 150px"></div>
-            <div class="item" style="flex:1 0 150px"></div>
-            <div class="item" style="flex:1 0 150px"></div>
-            <div class="item" style="flex:1 0 150px"></div>
-            <div class="item" style="flex:1 0 150px"></div>
-            <div class="item" style="flex:1 0 150px"></div>
+          <div class="container" style="-webkit-flex-wrap:wrap;flex-wrap:wrap">
+            <div class="item" style="-webkit-flex:1 0 150px;flex:1 0 150px"></div>
+            <div class="item" style="-webkit-flex:1 0 150px;flex:1 0 150px"></div>
+            <div class="item" style="-webkit-flex:1 0 150px;flex:1 0 150px"></div>
+            <div class="item" style="-webkit-flex:1 0 150px;flex:1 0 150px"></div>
+            <div class="item" style="-webkit-flex:1 0 150px;flex:1 0 150px"></div>
+            <div class="item" style="-webkit-flex:1 0 150px;flex:1 0 150px"></div>
+            <div class="item" style="-webkit-flex:1 0 150px;flex:1 0 150px"></div>
+            <div class="item" style="-webkit-flex:1 0 150px;flex:1 0 150px"></div>
           </div>
 
         </section>
