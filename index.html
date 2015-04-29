@@ -470,7 +470,7 @@
           <h2>Autoprefixer</h2>
           <h4>Postprocessor basé sur PostCSS</h4>
 
-          <p>Il suffit de lui indiquer les navigateurs à supporter<br/><code>browsers: ['> 1%', '', 'IE 10']</code><br/><code>browsers: ['last 2 versions', 'Firefox >=10']</code></p>
+          <p>Il suffit de lui indiquer les navigateurs à supporter<br/><code>browsers: ['> 1%', 'IE 10']</code><br/><code>browsers: ['last 2 versions', 'Firefox >=10']</code></p>
 
           <p>Meilleur support des syntaxes Flexbox que Compass</p>
 
@@ -1220,6 +1220,156 @@ h3::after {
             </div>
           </div>
 
+        </section>
+
+        <!-- | -->
+
+        <section>
+          <h2>grid of images</h2>
+
+          <p>Images can have different sizes</p>
+        </section>
+
+        <section>
+          <img src="img/kindle.png" />
+        </section>
+
+        <section>
+          <p>Ratio 2:3</p>
+          <img src="img/kindle-2.png" />
+        </section>
+
+        <section>
+          <pre><code data-trim contenteditable class="html">
+<div class="manga-group">
+  <div class="manga-item">
+    <img class="manga-item__image" src="….jpg">
+    <span class="manga-item__primary-title">Assassination Classroom</span>
+    <span class="manga-item__secondary-title">Tome 8</span>
+  </div>
+  …
+</div>
+          </code></pre>
+        </section>
+
+        <section>
+          <pre><code data-trim contenteditable class="css">
+.manga-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 10px;
+  justify-content: space-around;
+}
+
+.manga-item {
+  background-color: yellow; // pour mieux comprendre
+  margin: 10px;
+}
+
+.manga-item__image {
+  max-height: 300px;
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <img src="img/codepen1.png" />
+        </section>
+
+        <section>
+          <pre><code data-trim contenteditable class="css">
+.manga-item {
+  flex: 0 0 200px;
+}
+          </code></pre>
+
+          <img src="img/codepen2.png" />
+        </section>
+
+        <section>
+          <pre><code data-trim contenteditable class="css">
+.manga-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+          </code></pre>
+
+          <img src="img/codepen3.png" />
+        </section>
+
+
+        <section>
+          <pre><code data-trim contenteditable class="css">
+.manga-item__image {
+  max-width: 100%;
+}
+          </code></pre>
+
+          <img src="img/codepen4.png" />
+        </section>
+
+        <section>
+          <h3>Firefox 37</h3>
+          <img src="img/codepen5.png" />
+        </section>
+
+        <section>
+          <h3>Firefox 37</h3>
+          <img src="img/codepen5-anotate.png" />
+        </section>
+
+        <section>
+          <pre><code data-trim contenteditable class="css">
+.manga-item {
+  flex: 0 0 200px;
+  max-width: 200px; //fix bug firefox
+}
+          </code></pre>
+
+          <img src="img/codepen6.png" />
+        </section>
+
+        <section>
+          <h3>Internet Explorer 11</h3>
+          <img src="img/codepen7.png" />
+        </section>
+
+        <section>
+          <h3>Flexbugs</h3>
+          <a target="_blank" href="https://github.com/philipwalton/flexbugs#5-column-flex-items-dont-always-preserve-intrinsic-aspect-ratios">
+            <img src="img/flexbug-aspect-ratio.png" />
+          </a>
+        </section>
+
+        <section>
+          <pre><code data-trim contenteditable class="html">
+<div class="manga-item">
+  <div class="manga-item__place-image">
+    <img class="manga-item__image" src="….jpg">
+  </div>
+  <span class="manga-item__primary-title">Assassination Classroom</span>
+  <span class="manga-item__secondary-title">Tome 8</span>
+</div>
+          </code></pre>
+          <pre><code data-trim contenteditable class="css">
+.manga-item__place-image {
+  max-width: 100%;
+  flex: 0 0 auto;
+}
+
+.manga-item__image {
+  display: block;
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <p><a target="_blank" href="http://codepen.io/Freddy03h/pen/LVVPJW">Lien du CodePen</a></p>
+          <a target="_blank" href="http://codepen.io/Freddy03h/pen/LVVPJW"><img src="img/codepen4.png" /></a>
+          <p><a target="_blank" href="http://www.mangacollec.com">Mangacollec.com</a></p>
         </section>
 
         <!-- |||| -->
