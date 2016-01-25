@@ -6,7 +6,7 @@
 
     <title>A presentation of Flexbox CSS</title>
 
-    <meta name="description" content="A presentation of angular.js">
+    <meta name="description" content="A presentation of flexbox css">
     <meta name="author" content="Freddy Harris">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -48,6 +48,9 @@
       .reveal p {
         font-weight: 300;
       }
+      .reveal .progress{
+        height: 4px;
+      }
       .reveal .progress span{
         background: #EA5C45;
       }
@@ -61,6 +64,9 @@
         letter-spacing: 0.025em;
         padding: 8px 8px 10px;
         font-size: 30px;
+      }
+      .reveal .controls {
+        visibility: hidden;
       }
       .reveal .controls div.navigate-left,
       .reveal .controls div.navigate-left.enabled {
@@ -82,6 +88,21 @@
       .reveal .li-divider {
         list-style: none;
         margin-top: 10px;
+      }
+      .reveal .signature {
+        margin-top: 50px;
+        letter-spacing: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        opacity: 0.75;
+      }
+      .reveal .signature img{
+        border: none;
+        box-shadow: none;
+        height: 50px;
+        margin-right: 5px;
       }
 
       .container {
@@ -296,14 +317,14 @@
 
         <section data-background="img/fa_artboard.png">
           <h4 style="color: white">Currently</h4>
-          <h2 style="color: white">Front end developer</h2>
+          <h2 style="color: white">Lead Front end developer</h2>
           <p><a href="http://followanalytics.com">FollowAnalytics</a></p>
         </section>
 
         <section>
           <h4>Projet personnel</h4>
           <a href="http://www.mangacollec.com" target="_blank">
-            <img src="img/mangacollec.png" />
+            <img src="img/mangacollec.jpg" />
           </a>
         </section>
 
@@ -339,9 +360,14 @@
           <p><a href="http://breakupwithie8.com" target="_blank">http://breakupwithie8.com</a></p>
         </section>
 
-        <section>
+        <!--<section>
           <img src="img/StatCounter-browser_version_partially_combined-FR-monthly-201503-201503-bar.png">
           <p>Stats France Mars 2015</p>
+        </section>-->
+
+        <section>
+          <img src="img/StatCounter-browser_version_partially_combined-FR-monthly-201512-201512-bar.png">
+          <p>Stats France Decembre 2015</p>
         </section>
 
         <section>
@@ -362,6 +388,7 @@
               </tr>
             </tbody>
           </table>
+          <p style="margin-top:20px"><small>Stats France Mars 2015</small></p>
           <aside class="notes">
           <p>PlayTV : plus de 6 millions de visites mensuelles - 8e sites le plus visités au Classement CybereStat des sites souscripteurs de l’étude Médiamétrie-eStat en décembre 2012</p>
           </aside>
@@ -1396,13 +1423,13 @@ h3::after {
         <section>
           <h2>Merci</h2>
 
-          <h4><a href="https://remixjobs.com/rjday/company/69957/informations" target="_blank">FollowAnalytics recrute !</a></h4>
-          <ul>
-            <li>Dev Backend Ruby</li>
-            <li>Dev iOS</li>
-            <li>Dev Android</li>
-            <li>QA Engineer</li>
-          </ul>
+          <div class="signature">
+            <img src="img/twitter.png">
+            <a href="http://twitter.com/harrisfreddy" target="_blank">@harrisfreddy</a>
+          </div>
+
+          <p style="margin-top:30px;">Freelance Front-end</p>
+          <p><small>React.js • Mobile First • Hybrid & Progressive Web Apps</small></p>
         </section>
 
       </div>
