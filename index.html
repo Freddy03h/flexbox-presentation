@@ -349,13 +349,23 @@
         </section>
 
         <section>
+          <h2>drop support for IE8</h2>
+          <ul style="margin-top:30px">
+            <li style="margin-bottom:10px"><strong>Twitter</strong> : <a href="https://twittercommunity.com/t/update-on-twitter-for-websites-ie7-and-ie8-browser-support/28234" target="_blank">Drop support for IE8 in January 2015</a></li>
+            <li style="margin-bottom:10px"><strong>Microsoft</strong> : <a href="https://products.office.com/en-us/office-system-requirements?ui=en-US&rs=en-US&ad=US" target="_blank">Office 365 unusable with IE8</a></li>
+            <li style="margin-bottom:10px"><strong>Yahoo</strong> : <a href="https://help.yahoo.com/kb/SLN24087.html" target="_blank">Internet Explorer 8 no longer supported</a></li>
+            <li style="margin-bottom:10px"><strong>Google</strong> : <a href="http://googleappsupdates.blogspot.fr/2012/09/supporting-modern-browsers-internet.html" target="_blank">Internet Explorer 8 support discontinued</a></li>
+            <li style="margin-bottom:10px"><strong>Facebook</strong> : <a href="https://facebook.github.io/react/blog/2016/01/12/discontinuing-ie8-support.html" target="_blank">Discontinuing IE 8 Support in React DOM</a></li>
+          </ul>
+        </section>
+
+        <section>
           <h3 style="text-align: left">Ni Facebook,<br/>ni Twitter,<br/>ni Microsoft,<br/>ni Yahoo,<br/>ni Google,<br/>ni Apple<br/>ne supportent IE8.</h3>
           <h3 style="text-align: left">Votre site a-t-il besoin d’être optimisé pour IE8 ?</h3>
           <p><small><a href="https://twitter.com/HTeuMeuLeu/status/577858028885700609" target="_blank">@HTeuMeuLeu</a></small></p>
         </section>
 
         <section>
-          <h2>break up with ie8</h2>
           <a href="http://breakupwithie8.com" target="_blank"><img src="img/break-up-with-ie8.png"></a>
           <p><a href="http://breakupwithie8.com" target="_blank">http://breakupwithie8.com</a></p>
         </section>
@@ -392,6 +402,14 @@
           <aside class="notes">
           <p>PlayTV : plus de 6 millions de visites mensuelles - 8e sites le plus visités au Classement CybereStat des sites souscripteurs de l’étude Médiamétrie-eStat en décembre 2012</p>
           </aside>
+        </section>
+
+        <section>
+          <img src="img/ie-end-support.png">
+          <ul>
+          <li>Internet Explorer 11 is the last version of Internet Explorer.</li>
+          <li>It means you should take action. After January 12, 2016, Microsoft will no longer provide security updates or technical support for older versions of Internet Explorer.</li>
+          </ul>
         </section>
 
         <!-- |||| -->
@@ -443,8 +461,8 @@
           <h2>syntaxes 2012</h2>
           <pre><code data-trim contenteditable class="css">
 .container {
-    display: flex; /* since Chrome 29, Firefox 22 and IE11 */
-    display: -webkit-flex; /* since Safari 7 and Chrome Android 4.4 */
+    display: flex; /* since Chrome 29, Firefox 22, Safari 9 and IE11 */
+    display: -webkit-flex; /* Safari 7 to 8 and Chrome Android 4.4 */
 
     flex-direction: row;
     -webkit-flex-direction: row;
@@ -466,8 +484,8 @@
     display: -webkit-box; /* Safari 3 to 7, Chrome 4 to 20, Android Browser */
     display: -moz-box /* Firefox 2 to 21  */;
     display: -ms-flexbox; /* IE 10 */
-    display: -webkit-flex; /* since Safari 7 and Chrome Android 4.4 */
-    display: flex; /* since Chrome 29, Firefox 22 and IE11 */
+    display: -webkit-flex; /* Safari 7 to 8 and Chrome Android 4.4 */
+    display: flex; /* since Chrome 29, Firefox 22, Safari 9 and IE11 */
 
     -webkit-box-direction: normal;
     -moz-box-direction: normal;
@@ -495,9 +513,16 @@
 
         <section>
           <h2>Autoprefixer</h2>
-          <h4>Postprocessor basé sur PostCSS</h4>
+          <h4>Plugin du Postprocessor <strong>PostCSS</strong></h4>
 
-          <p>Il suffit de lui indiquer les navigateurs à supporter<br/><code>browsers: ['> 1%', 'IE 10']</code><br/><code>browsers: ['last 2 versions', 'Firefox >=10']</code></p>
+          <img src="img/autoprefixer.svg" style="border:none;box-shadow:none;height:200px;">
+
+          <p>Il suffit de lui indiquer les navigateurs à supporter<p>
+
+          <ul style="font-size:0.7em">
+            <li><code>browsers:&nbsp;['> 1%',&nbsp;'IE&nbsp;10']</code></li>
+            <li><code>browsers:&nbsp;['last&nbsp;2&nbsp;versions',&nbsp;'Firefox&nbsp;>=10']</code></li>
+          </ul>
 
           <p>Meilleur support des syntaxes Flexbox que Compass</p>
 
@@ -506,6 +531,20 @@
 
         <section>
           <h3>Je dois vraiment<br/>supporter IE…</h3>
+        </section>
+
+        <section>
+          <h2>Flexibility</h2>
+          <h4>Polyfill</h4>
+
+          <p>Compatibilité Flexbox pour IE8 & IE9</p>
+
+          <pre><code data-trim contenteditable class="css">
+.container {
+    -js-display: flex;
+    display: flex;
+}
+          </code></pre>
         </section>
 
         <section>
@@ -1176,7 +1215,7 @@ h3::before,
 h3::after {
     content: "";
     border-bottom: solid black 1px;
-    flex: 1;
+    flex-grow: 1;
 }
           </code></pre>
           <pre><code data-trim contenteditable class="html">
@@ -1339,12 +1378,12 @@ h3::after {
         </section>
 
         <section>
-          <h3>Firefox 37</h3>
+          <h3>Firefox 37 - 43</h3>
           <img src="img/codepen5.png" />
         </section>
 
         <section>
-          <h3>Firefox 37</h3>
+          <h3>Firefox 37 - 43</h3>
           <img src="img/codepen5-anotate.png" />
         </section>
 
@@ -1357,6 +1396,8 @@ h3::after {
           </code></pre>
 
           <img src="img/codepen6.png" />
+
+          <p><a target="_blank" href="http://codepen.io/Freddy03h/pen/KVoRQv">Lien du CodePen</a></p>
         </section>
 
         <section>
@@ -1394,9 +1435,10 @@ h3::after {
         </section>
 
         <section>
-          <p><a target="_blank" href="http://codepen.io/Freddy03h/pen/LVVPJW">Lien du CodePen</a></p>
+          <h3>✓ Firefox & IE 11</h3>
           <a target="_blank" href="http://codepen.io/Freddy03h/pen/LVVPJW"><img src="img/codepen4.png" /></a>
-          <p><a target="_blank" href="http://www.mangacollec.com">Mangacollec.com</a></p>
+          <p><a target="_blank" href="http://codepen.io/Freddy03h/pen/LVVPJW">Lien du CodePen</a></p>
+          <!--<p><a target="_blank" href="http://www.mangacollec.com">Mangacollec.com</a></p>-->
         </section>
 
         <!-- |||| -->
@@ -1413,10 +1455,10 @@ h3::after {
             <li class="li-divider">Tools</li>
             <li><a href="https://github.com/postcss/autoprefixer" target="_blank">Autoprefixer</a></li>
             <li><a href="http://modernizr.com/" target="_blank">Modernizr</a></li>
+            <li><a href="https://github.com/10up/flexibility" target="_blank">Flexibility</a></li>
             <li class="li-divider">Others</li>
             <li><a href="http://flexboxin5.com">Flexbox in 5</a></li>
             <li><a href="https://github.com/philipwalton/flexbugs" target="_blank">Flexbugs</a></li>
-            
           </ul>
         </section>
 
